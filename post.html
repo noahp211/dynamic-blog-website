@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>View/Edit Post</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-
+<header>
+    <h1>View/Edit Post</h1>
+</header>
+<main>
+    <div id="post-details">
+    </div>
+    <form id="edit-form" style="display: none;">
+        <input type="text" id="edit-title" placeholder="Edit Title" required><br>
+        <textarea id="edit-content" placeholder="Edit Content" required></textarea><br>
+        <button type="submit">Save Changes</button>
+    </form>
+    <button id="edit-button">Edit</button>
+    <button id="delete-button">Delete</button>
+    <a href="index.html">Back to Homepage</a>
+</main>
+<script src="scripts/main.js"></script>
 </body>
 </html>
