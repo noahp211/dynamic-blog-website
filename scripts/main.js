@@ -18,6 +18,21 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     }
 
+    const posts = JSON.parse(localStorage.getItem("posts")) || [];
+    const postList = document.getElementById("posts");
+
+    if (postList) {
+        if (posts.length === 0) {
+            postList.innerHTML = "<p>No posts available.</p>";
+        } else {
+            posts.forEach((post, index) => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `<a href="post.html?id=${index}">${post.title}</a>`;
+                postList.appendChild(listItem);
+            });
+        }
+    }
+
     function loadPost() {
         const urlParams = new URLSearchParams(window.location.search);
         const postId = urlParams.get("id");
@@ -94,4 +109,3 @@ document.addEventListener("DOMContentLoaded", function(){
         loadPost();
     }
 });
-
